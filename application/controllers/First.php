@@ -34,7 +34,23 @@ class First extends Application{
         $this->data = array_merge($this->data, $quote);
         //render the page
         $this->render();
+    }
 
+    public function _remap($function) {
+        if ($function === 'sleep')
+            $this->zzz();
+        else if ($function === 'gimme')
+            $this->gimme(3);
+        else
+            $this->index();
+    }
+
+    function gimme($id){
+        $this->load->model('quotes');
+        $record = $this->quotes->get($id);
+        $this->data['pagebody'] = 'justone';
+        $this->data = array_merge($this->data, $record);
+        $this->render();
     }
 
     public function _remap($function) {
