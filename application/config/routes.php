@@ -42,8 +42,7 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['last'] = "last/Welcome";
 $route['show/(:num)'] = 'first/gimme/3';
-$route['(:any)'] = "first/$1";
-
+$route['comp(\d){4}/(.*)'] = 'wise/bingo';
 //reroutes the url with wildcards lock/*/* to call the method shucks in welcome.php
 $route['lock/(:any)/(:any)'] = 'welcome/shucks';
 
