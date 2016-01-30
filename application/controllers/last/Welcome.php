@@ -4,10 +4,9 @@
  * Created by PhpStorm.
  * User: Andrew
  * Date: 29/01/2016
- * Time: 8:49 PM
+ * Time: 11:15 PM
  */
-
-class Last extends Application {
+class Welcome extends Application {
 
     function __construct()
     {
@@ -17,6 +16,7 @@ class Last extends Application {
     //
     function index()
     {
+        //Gets the last quote
         $quote = $this->quotes->last();
         $this->data = array_merge($this->data, $quote);
         $this->data['pagebody'] = 'justone';

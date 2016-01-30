@@ -40,6 +40,9 @@
 
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
+$route['last'] = "last/Welcome";
+$route['show/(:num)'] = 'first/gimme/3';
+$route['(:any)'] = "first/$1";
 
 
 /* End of file routes.php */
